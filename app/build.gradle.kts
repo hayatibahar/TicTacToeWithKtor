@@ -73,9 +73,9 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
 
     // Dagger - Hilt
-    implementation (libs.hilt.android)
-    ksp (libs.hilt.android.compiler)
-    ksp (libs.androidx.hilt.compiler)
+    implementation(libs.hilt.android)
+    ksp(libs.dagger.compiler)
+    ksp(libs.hilt.android.compiler)
     implementation (libs.androidx.hilt.navigation.compose)
 
     // Compose
