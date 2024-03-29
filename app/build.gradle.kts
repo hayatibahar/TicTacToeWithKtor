@@ -1,6 +1,11 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+    alias(libs.plugins.ksp)
+    alias(libs.plugins.hilt)
+    alias(libs.plugins.serialization)
+
+
 }
 
 android {
@@ -66,4 +71,22 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+    // Dagger - Hilt
+    implementation (libs.hilt.android)
+    ksp (libs.hilt.android.compiler)
+    ksp (libs.androidx.hilt.compiler)
+    implementation (libs.androidx.hilt.navigation.compose)
+
+    // Compose
+    implementation (libs.androidx.lifecycle.viewmodel.compose)
+
+    // Ktor
+    implementation (libs.ktor.client.core)
+    implementation (libs.ktor.client.cio)
+    implementation (libs.ktor.client.websockets)
+    implementation (libs.ktor.client.logging)
+
+    // Serialization
+    implementation (libs.kotlinx.serialization.json)
 }
